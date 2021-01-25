@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Color App</title>
+  
+  <!-- CSS -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+    * {
+      margin: 8px auto;
+      font-family: 'Lato', sans-serif;
+    }
+    
+    body {
+      padding: 0;
+      margin: 0;
+      transition: 0.6s;
+      background: #eff3f6;
+      
+    }
+
+    .container {
+      padding: 10px;
+      text-align: center;
+      background: white;
+      position: absolute;
+      height: 330px;
+      width: 285px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 4px;
+      
+      /* Centering Element with FlexBox */
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      justify-content: center;
+      align-items: center;
+
+    }
+    
+    h1 {
+      color: #666262;
+    }
+
+    #col {
+      width: 200px;
+      height: 90px;
+      background: white;
+      border: 1px solid black;
+      outline: 0;
+      border-radius: 5px;
+    }
+
+    #col-val {
+      padding: 8px;
+      font-size: 25px;
+      margin-top: 5px;
+      text-transform: uppercase;
+      width: 110px;
+      font-weight: bolder;
+      background: white;
+      color: #666262;
+      border: 1px solid #666262;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-left: 5px solid #666262;
+    }
+
+    button {
+      margin-top: 5px;
+      padding: 8px;
+      font-size: 25px;
+      border: none;
+      background: #000000;
+      color: white;
+      text-align: center;
+      border-radius: 4px;
+      width: 120px;
+      outline: 0;
+      transition: 0.4s ease-in
+    }
+    
+    button:hover {
+      background: #50536B;
+    }
+    
+  </style>
+  
+</head>
+<body>
+  
+  
+  
+  
+  <!-- HTML -->
+  <div class="container">
+    
+    <h1>AWESOME COLORS</h1>
+    <input id="col" type="color">
+    <span id="col-val">#------</span>
+    <button class="btn">TEST</button>
+    
+  </div>
+  
+  
+
+
+
+  <!-- JavaScript -->
+  <script>
+    let color = document.querySelector("#col"),
+        colorValue = document.querySelector("#col-val"),
+        btn = document.querySelector(".btn");
+
+
+    color.addEventListener('change', function() {
+        colorValue.innerText = this.value;
+    });
+
+    btn.onclick = function() {
+        document.body.style.background = colorValue.innerText;
+    }
+    
+  </script>
+  
+  
+  
+</body>
+</html>
+
